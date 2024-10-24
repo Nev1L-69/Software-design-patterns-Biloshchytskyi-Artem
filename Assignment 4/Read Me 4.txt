@@ -1,0 +1,94 @@
+Assignment 1: Strategy Pattern - Payment Processing System
+Strategy Pattern
+Паттерн Strategy Pattern позволяет выбрать алгоритм во время выполнения,
+что позволяет системе обработки платежей обрабатывать несколько способов оплаты
+(кредитные карты, PayPal, Cryptocurrency). Интерфейс PaymentStrategy определяет
+метод processPayment(double amount), а конкретные реализации включают CreditCardPayment,
+PayPalPayment и CryptoPayment. Класс ShoppingCart использует эти стратегии для
+обработки платежей и может динамически изменять метод оплаты.
+
+
+Assignment 2: Observer Pattern - Weather Monitoring System
+Observer Pattern
+Pattern Observer позволяет субъекту уведомлять несколько наблюдателей об
+изменениях в своем состоянии. В данной системе WeatherMonitoringSystem класс
+WeatherStation выступает в роли субъекта, обновляя погодные данные и уведомляя
+наблюдателей. Интерфейс WeatherDisplay определяет метод update(temperature, humidity, pressure)
+с конкретными реализациями, такими как CurrentConditionsDisplay, StatisticsDisplay и
+ForecastDisplay. Класс WeatherData управляет WeatherStation и Display.
+
+
+Assignment 3: Command Pattern - Remote Control for Smart Home Devices
+Command Pattern
+
+Command pattern инкапсулирует запрос в виде объекта, позволяя параметризировать и
+ставить запросы в очередь. В этой универсальной системе дистанционного управления интерфейс
+Command включает методы execute() и undo(). Конкретные классы команд, такие как TurnTVOn,
+SetVolume и DimLights, определяют конкретные действия, а классы приемников, такие как TV,
+Stereo и Light, выполняют фактические операции. Класс RemoteControl поддерживает слоты команд и функцию отмены.
+
+
+
+Assignment 4: State Pattern - Order Processing System
+State Pattern
+
+State Pattern позволяет объекту изменять свое поведение при изменении внутреннего состояния.
+В данной системе обработки заказов интерфейс State определяет такие действия, как payOrder,
+shipOrder, deliverOrder и cancelOrder. Конкретные классы состояний представляют каждое состояние
+заказа (New, Paid, Shipped, Delivered, Cancelled). Класс Order сохраняет текущее состояние и
+делегирует ему действия, обеспечивая динамическое поведение в зависимости от состояния заказа.
+
+
+Assignment 5: Chain of Responsibility - Expense Approval System
+Chain of Responsibility Pattern
+Chain of Responsibility Pattern позволяет передавать запросы по цепочке обработчиков.
+В данной системе утверждения расходов базовый класс Approver управляет запросами и
+хранит ссылку на следующего утвердителя. Конкретные утвердители, такие как TeamLead,
+Manager, Director и CEO, обрабатывают запросы в зависимости от суммы расходов. Класс
+ExpenseRequest инкапсулирует такие свойства, как сумма и цель, а класс ApprovalChain
+обрабатывает запросы по цепочке.
+
+
+Assignment 6: Mediator Pattern - Chat Room Application
+Mediator Pattern
+Mediator Pattern централизует связь между объектами, чтобы уменьшить зависимость.
+В этом приложении чата интерфейс ChatMediator определяет методы для отправки сообщений
+и добавления пользователей. Класс ChatRoom выступает в роли посредника, координирующего
+обмен сообщениями. Абстрактный класс User предоставляет методы для отправки и получения
+сообщений, а также конкретные реализации, такие как RegularUser и PremiumUser.
+
+
+Assignment 7: Memento Pattern - Document Version Control System
+Memento Pattern
+Memento Pattern фиксирует и экстернализирует внутреннее состояние объекта, не
+нарушая инкапсуляции, и позволяет восстановить его позже. В этой системе
+контроля версий документов класс Document (создатель) может редактировать содержимое и
+создавать/восстанавливать мементы. Класс DocumentVersion (мемент) хранит состояние документа, а
+класс VersionControl (смотритель) управляет версиями документа, позволяя пользователям сохранять,
+перечислять и восстанавливать определенные версии.
+
+
+Assignment 8: Visitor Pattern - Shape Area Calculator
+Visitor Pattern
+Visitor Pattern отделяет алгоритм от объектов, с которыми он работает, позволяя добавлять новые операции
+без модификации объектов. В этой системе интерфейс Shape включает метод accept(Visitor visitor) для
+посещения фигур. Конкретные классы фигур, такие как Circle, Rectangle и Triangle, реализуют этот интерфейс.
+Интерфейс Visitor определяет методы посещения для каждого типа фигур, а метод посещения AreaCalculator
+вычисляет площадь для каждой фигуры.
+
+
+Assignment 9: Template Method Pattern - Report Generation System
+Template Method Pattern
+Template Method Pattern определяет скелет алгоритма в базовом классе, позволяя подклассам переопределять
+конкретные шаги. В данной системе генерации отчетов абстрактный класс ReportGenerator содержит шаблонный
+метод generateReport(), который описывает процесс создания отчета. Абстрактные методы formatHeader(),
+formatBody() и formatFooter() позволяют настраивать конкретные классы генераторов отчетов, такие как
+PDFReportGenerator и HTMLReportGenerator.
+
+
+Assignment 10: Iterator Pattern - Playlist Management System
+Iterator Pattern
+Iterator Pattern предоставляет способ последовательного доступа к элементам коллекции без раскрытия ее
+базового представления. В этой системе управления плейлистами класс Playlist хранит коллекцию объектов
+Song и реализует несколько классов итераторов, включая SequentialIterator, ShuffleIterator и GenreFilterIterator.
+Каждый итератор предоставляет методы hasNext() и next() для обхода, обеспечивая гибкое управление и поиск песен.
